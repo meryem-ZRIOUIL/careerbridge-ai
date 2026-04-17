@@ -10,6 +10,41 @@ from enum import Enum
 import numpy as np
 from groq import Groq
 
+
+
+
+import streamlit as st
+
+# =========================
+# SESSION ROLE
+# =========================
+if "role" not in st.session_state:
+    st.session_state.role = None
+
+# =========================
+# INDEX PAGE
+# =========================
+if st.session_state.role is None:
+    st.title("🎓 CareerBridge AI")
+
+    st.markdown("### Choisissez votre profil 👇")
+
+    col1, col2, col3 = st.columns(3)
+
+    if col1.button("👨‍🎓 Étudiant"):
+        st.session_state.role = "student"
+        st.rerun()
+
+    if col2.button("👨‍👩‍👧 Parent"):
+        st.session_state.role = "parent"
+        st.rerun()
+
+    if col3.button("🎓 Conseiller"):
+        st.session_state.role = "advisor"
+        st.rerun()
+
+    st.stop()
+
 # =========================
 # PAGE CONFIG
 # =========================

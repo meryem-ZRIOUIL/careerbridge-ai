@@ -6,3 +6,6 @@ data/
 .streamlit/
 SecretKeyApi.txt
 .env
+__pycache__/
+.env
+archive/
